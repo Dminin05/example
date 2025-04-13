@@ -10,6 +10,9 @@ body {
     background-color: #f0f0f0;
 }
 .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
 }
 button {
@@ -24,3 +27,47 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+.image {
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+    margin: 10px 0;
+  }
+.row {
+    display: flex;
+    align-items: center;
+}
+
+/* внешние границы таблицы серого цвета толщиной 1px */
+table {
+    border: 1px solid grey;
+ }
+ /* границы ячеек первого ряда таблицы */
+ th {
+    border: 1px solid grey;
+ }
+ /* границы ячеек тела таблицы */
+ td {
+    border: 1px solid grey;
+ }
+
+
+
+ details {
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+  }
+  
+  summary {
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .details img {
+    max-width: 150px;
+    margin-top: 10px;
+    border-radius: 8px;
+  }

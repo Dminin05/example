@@ -10,7 +10,7 @@
     <div class="container">
         <h1>Получить пользователей</h1>
         <a href="get_users.php"><button>Get</button></a>
-        <?php include 'get_users.php'; ?>
+        <?php include 'users.php'; ?>
     </div>
 </body>
 </html>
