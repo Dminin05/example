@@ -11,6 +11,7 @@
         <h1>Получить пользователей</h1>
         <a href="get_users.php"><button>Get</button></a>
         <?php include 'users.php'; ?>
+        <a href="form.html">Form</a>
     </div>
 </body>
 </html>
