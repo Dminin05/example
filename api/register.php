@@ -19,6 +19,15 @@ if (!$first_name || !$last_name || !$email || !$password) {
 $hash = password_hash($password, PASSWORD_DEFAULT);
 
 try {
+    // Проверка уникальности email
+    $stmt = $pdo->prepare("SELECT id FROM users WHERE email = :email");
+    $stmt->execute([':email' => $email]);
+    if ($stmt->fetch()) {
+        http_response_code(400);
+        echo json_encode(['error' => 'Пользователь с таким email уже существует']);
+        exit;
+    }
+
     $stmt = $pdo->prepare("INSERT INTO users (first_name, last_name, email, password, role) VALUES (?, ?, ?, ?, 'USER')");
     $stmt->execute([$first_name, $last_name, $email, $hash]);
     http_response_code(200);
@@ -27,4 +36,3 @@ try {
     http_response_code(500);
     echo json_encode(['error' => 'Ошибка при регистрации: ' . $e->getMessage()]);
 }
-?>
