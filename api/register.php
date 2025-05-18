@@ -19,7 +19,7 @@ if (!$first_name || !$last_name || !$email || !$password) {
 $hash = password_hash($password, PASSWORD_DEFAULT);
 
 try {
-    $stmt = $pdo->prepare("INSERT INTO users (first_name, last_name, email, password) VALUES (?, ?, ?, ?)");
+    $stmt = $pdo->prepare("INSERT INTO users (first_name, last_name, email, password, role) VALUES (?, ?, ?, ?, 'USER')");
     $stmt->execute([$first_name, $last_name, $email, $hash]);
     http_response_code(200);
     echo json_encode(['message' => 'Регистрация успешна']);
