@@ -1,14 +1,14 @@
 <?php
 session_start();
 require_once 'config.php';
-require_once 'get-user-role.php';
+require_once 'functions/get-user-role-function.php';
 
 header('Content-Type: application/json'); // Указываем, что ответ — JSON
 
 try {
     $role = getUserRoleById($pdo, $_SESSION['user_id']);
     if ($role === 'ADMIN') {
-        $stmt = $pdo->query("SELECT id, first_name, last_name, email FROM users");
+        $stmt = $pdo->query("SELECT id, first_name, last_name, email, role FROM users");
         $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
         echo json_encode($users);
     } else {

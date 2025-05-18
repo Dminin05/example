@@ -10,14 +10,14 @@ fetch('../../api/get-users.php') // путь к твоему PHP-файлу
         const tbody = document.querySelector('#users tbody');
 
         data.forEach(user => {
-
             const row = document.createElement('tr');
             row.innerHTML = `
-            <td>${user.id}</td>
-            <td>${user.first_name}</td>
-            <td>${user.last_name}</td>
-            <td>${user.email}</td>
-          `;
+                <td>${user.id}</td>
+                <td>${user.first_name}</td>
+                <td>${user.last_name}</td>
+                <td>${user.email}</td>
+                <td>${user.role || '-'}</td>
+            `;
             tbody.appendChild(row);
         });
     })

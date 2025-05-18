@@ -1,24 +1,33 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Список пользователей</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Админка - Список пользователей</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <h1>Пользователи</h1>
-  <div id="error" style="color: red;"></div>
-  <table id="users" cellpadding="5">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Имя</th>
-        <th>Фамилия</th>
-        <th>Email</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
 
-  <script src="js/fetch-users.js"></script>
+<h1>Админка — Пользователи</h1>
+<button id="refresh-btn">Обновить список</button>
+<div id="error"></div>
+
+<table id="users">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Имя</th>
+      <th>Фамилия</th>
+      <th>Email</th>
+      <th>Роль</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Данные пользователей появятся здесь -->
+  </tbody>
+</table>
+
+<script src="js/fetch-users.js"></script>
+
 </body>
 </html>
