@@ -1,9 +1,9 @@
 <?php
 
-$host = 'localhost';
-$db = 'test_php';
-$user = 'root'; 
-$pass = ''; 
+$host = '127.0.0.1';
+$db = 'secret';
+$user = 'secret'; 
+$pass = 'secret'; 
 
 try {
     // Создание подключения к базе данных
