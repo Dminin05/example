@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once 'config.php';
 
 header('Content-Type: application/json');
@@ -13,21 +14,11 @@ try {
         exit;
     }
 
-    // Найти пользователя по email
-    $stmt = $pdo->prepare("SELECT id FROM users WHERE email = :email");
-    $stmt->execute([':email' => $email]);
-    $user = $stmt->fetch();
-
-    if (!$user) {
-        http_response_code(404);
-        echo 'Пользователь с таким email не найден.';
-        exit;
-    }
-
     // Вставить feedback с user_id
-    $stmt = $pdo->prepare("INSERT INTO feedbacks (user_id, text) VALUES (:user_id, :text)");
+    $stmt = $pdo->prepare("INSERT INTO feedbacks (user_id, email, text) VALUES (:user_id, :email, :text)");
     $stmt->execute([
-        ':user_id' => $user['id'],
+        ':user_id' => $_SESSION['user_id'],
+        ':email'    => $email,
         ':text'    => $text
     ]);
 

@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once 'config.php';
 
 header('Content-Type: application/json');
@@ -30,6 +31,8 @@ try {
 
     $stmt = $pdo->prepare("INSERT INTO users (first_name, last_name, email, password, role) VALUES (?, ?, ?, ?, 'USER')");
     $stmt->execute([$first_name, $last_name, $email, $hash]);
+    $user_id = $pdo->lastInsertId(); // Получаем ID нового пользователя
+    $_SESSION['user_id'] = $user_id;
     http_response_code(200);
     echo json_encode(['message' => 'Регистрация успешна']);
 } catch (PDOException $e) {

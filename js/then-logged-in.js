@@ -20,8 +20,14 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         document.getElementById("logout").addEventListener("click", () => {
-            localStorage.clear();
-            window.location.reload();
+            fetch('/api/logout.php', { method: 'POST' })
+                .then(() => {
+                    localStorage.clear();
+                    window.location.replace("../index.html");
+                })
+                .catch((err) => {
+                    console.error('Ошибка при выходе:', err);
+                });
         });
 
         // Закрытие по клику вне меню

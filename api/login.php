@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once 'config.php';
 
 header('Content-Type: application/json');
@@ -20,6 +21,7 @@ try {
     $user = $stmt->fetch();
 
     if ($user && password_verify($password, $user['password'])) {
+        $_SESSION['user_id'] = $user['id'];
         http_response_code(200);
         echo json_encode(['message' => 'Вход успешен']);
     } else {
