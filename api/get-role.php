@@ -2,6 +2,7 @@
 require_once 'config.php';
 require_once 'functions/get-user-role-function.php';
 session_start();
+header('Content-Type: application/json');
 
 // Предположим, ID пользователя хранится в сессии
 if (!isset($_SESSION['user_id'])) {
@@ -20,5 +21,5 @@ if ($role === null) {
     exit;
 }
 
-header('Content-Type: application/json');
+
 echo json_encode(['role' => $role]);

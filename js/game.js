@@ -1,28 +1,6 @@
-// Имитируем данные, полученные с сервера PHP (например, через fetch)
-
 // Получаем ID из URL
 const urlParams = new URLSearchParams(window.location.search);
 const gameId = urlParams.get('id');
-
-console.log(gameId)
-const game = {
-    id: 1,
-    title: "The Witcher 3: Wild Hunt",
-    price: "699 ₽",
-    description: "The Witcher 3 — ролевая игра с открытым миром, где вы играете за ведьмака Геральта.",
-    image: "https://cdn.akamai.steamstatic.com/steam/apps/292030/header.jpg"
-};
-
-
-// container.innerHTML = `
-//   <img class="game-cover" src="${game.image}" alt="${game.title}">
-//   <div class="game-info">
-//     <h1 class="game-title">${game.title}</h1>
-//     <p class="game-price">${game.price}</p>
-//     <p class="game-description">${game.description}</p>
-//     <button class="buy-button">Купить</button>
-//   </div>
-// `;
 
 const container = document.getElementById("game-container");
 

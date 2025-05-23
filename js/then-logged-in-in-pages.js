@@ -5,13 +5,12 @@ document.addEventListener("DOMContentLoaded", () => {
     if (isLoggedIn) {
         fetch('../api/get-role.php')
             .then(res => {
-                if (res.status == 401) {
+                if (!res.ok) {
                     throw new Error
                 }
-                res.json()
+                return res.json()
             })
             .then(data => {
-
                 userRole = data.role;
                 let adminLinkHTML = '';
                 if (userRole === 'ADMIN') {
@@ -63,7 +62,4 @@ document.addEventListener("DOMContentLoaded", () => {
                 console.log(e)
             })
     }
-
-
-
 });
