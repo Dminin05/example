@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Информация об игре</title>
+    <link rel="stylesheet" href="../css/cart.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">🌟 MySite</div>
+            <nav>
+                <a href="../index.html">Главная</a>
+                <a href="catalog.html">Каталог</a>
+                <a href="cart.html">Корзина</a>
+                <a href="contacts.html">Контакты</a>
+                <div class="auth-buttons">
+                    <button onclick="location.href='login.html'">Войти</button>
+                    <button onclick="location.href='register.html'">Зарегистрироваться</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="cart-container">
+            <h1>Корзина</h1>
+            <div class="cart-items" id="cart-items">
+                <!-- Карточки товаров будут добавляться через JS -->
+            </div>
+            <div class="cart-summary">
+                <div class="total">Итого: <span id="total-price">0 ₽</span></div>
+                <button class="checkout-button">Оформить заказ</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2025 MySite. Все права защищены.
+    </footer>
+    <script src="../js/then-logged-in-in-pages.js"></script>
+    <script src="../js/check-access.js"></script>
+    <script src="../js/cart-goods.js"></script>
+</body>
+
+</html>
