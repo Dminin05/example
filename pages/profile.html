@@ -1,14 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="../js/check-access.js"></script>
+    <title>Профиль</title>
+    <link rel="stylesheet" href="../css/profile.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/check-access.js" defer></script>
 </head>
+
 <body>
-    <div>
-        Test
-    </div>
+
+    <header>
+        <div class="container">
+            <div class="logo">🌟 MySite</div>
+            <nav>
+                <a href="../index.html">Главная</a>
+                <a href="catalog.html">Каталог</a>
+                <a href="cart.html">Корзина</a>
+                <a href="contacts.html">Контакты</a>
+                <div class="auth-buttons">
+                    <button onclick="location.href='pages/login.html'">Войти</button>
+                    <button onclick="location.href='pages/register.html'">Зарегистрироваться</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="profile-container">
+            <h2>Профиль пользователя</h2>
+            <div class="profile-info">
+                <p><strong>Имя:</strong> <span id="username">Загрузка...</span></p>
+                <p><strong>Email:</strong> <span id="email">Загрузка...</span></p>
+            </div>
+
+            <h3>Ваши заказы</h3>
+            <table id="orders-table" border="1" cellpadding="8" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Номер</th>
+                        <th>Дата</th>
+                        <th>Статус</th>
+                        <th>Сумма</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="4">Загрузка...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+
+    <footer>
+        &copy; 2025 MySite. Все права защищены.
+    </footer>
+
+    <script src="../js/user-profile.js"></script>
+    <script src="../js/then-logged-in-in-pages.js"></script>
 </body>
+
 </html>

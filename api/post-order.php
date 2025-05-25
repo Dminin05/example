@@ -24,8 +24,8 @@ try {
     $pdo->beginTransaction();
 
     // 1. Вставляем заказ
-    $stmt = $pdo->prepare("INSERT INTO orders (user_id, total_price) VALUES (?, ?)");
-    $stmt->execute([$_SESSION['user_id'], $totalPrice]);
+    $stmt = $pdo->prepare("INSERT INTO orders (user_id, total_price, status) VALUES (?, ?, ?)");
+    $stmt->execute([$_SESSION['user_id'], $totalPrice, 'Создан']);
     $orderId = $pdo->lastInsertId();
 
     // 2. Вставляем товары в заказ

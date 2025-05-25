@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="profile-menu">
                     <button id="profile-toggle">Профиль ▾</button>
                     <div class="dropdown" id="dropdown-menu" style="display: none;">
-                        <a href="pages/profile.html">Мой профиль</a>
+                        <a href="../pages/profile.html">Мой профиль</a>
                         ${adminLinkHTML}
                         <button id="logout">Выйти</button>
                     </div>
