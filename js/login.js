@@ -36,7 +36,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 localStorage.setItem("userEmail", email);
 
                 // Перенаправляем на защищённую страницу
-                window.location.replace("../index.html");
+                if (data.role === "ADMIN") {
+                    window.location.replace("../admin/admin.html");
+                } else {
+                    window.location.replace("../index.html");
+                }
             } else {
                 result.textContent = data.error;
             }

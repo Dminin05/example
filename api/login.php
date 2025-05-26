@@ -23,7 +23,7 @@ try {
     if ($user && password_verify($password, $user['password'])) {
         $_SESSION['user_id'] = $user['id'];
         http_response_code(200);
-        echo json_encode(['message' => 'Вход успешен']);
+        echo json_encode($user);
     } else {
         http_response_code(401);
         echo json_encode(['error' => 'Неверный логин или пароль']);

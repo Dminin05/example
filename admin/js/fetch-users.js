@@ -10,6 +10,9 @@ fetch('../../api/get-users.php') // путь к твоему PHP-файлу
         const tbody = document.querySelector('#users tbody');
 
         data.forEach(user => {
+            if (user.role === "ADMIN") {
+                return
+            }
             const row = document.createElement('tr');
             row.innerHTML = `
                 <td>${user.id}</td>

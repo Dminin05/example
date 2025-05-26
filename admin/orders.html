@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Админка - Список пользователей</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">🌟 MySite</div>
+            <nav>
+                <a href="admin.html">Пользователи</a>
+                <a href="#">Заказы</a>
+                <button id="logout">Выйти</button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div id="error"></div>
+
+        <div class="container">
+            <table id="orders-table" border="1" cellpadding="8" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Номер</th>
+                        <th>Дата</th>
+                        <th>Статус</th>
+                        <th>Сумма</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="4">Загрузка...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2025 MySite. Все права защищены.
+    </footer>
+
+    <script src="js/fetch-orders.js"></script>
+    <script src="js/logout.js"></script>
+
+</body>
+
+</html>

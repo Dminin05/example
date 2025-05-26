@@ -1,33 +1,55 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Админка - Список пользователей</title>
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Админка - Список пользователей</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body>
 
-<h1>Админка — Пользователи</h1>
-<button id="refresh-btn">Обновить список</button>
-<div id="error"></div>
+  <header>
+    <div class="container">
+      <div class="logo">🌟 MySite</div>
+      <nav>
+        <a href="#">Пользователи</a>
+        <a href="orders.html">Заказы</a>
+        <button id="logout">Выйти</button>
+      </nav>
+    </div>
+  </header>
 
-<table id="users">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Имя</th>
-      <th>Фамилия</th>
-      <th>Email</th>
-      <th>Роль</th>
-    </tr>
-  </thead>
-  <tbody>
-    <!-- Данные пользователей появятся здесь -->
-  </tbody>
-</table>
+  <main>
+    <div id="error"></div>
 
-<script src="js/fetch-users.js"></script>
+    <div class="container">
+      <table id="users">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Имя</th>
+            <th>Фамилия</th>
+            <th>Email</th>
+            <th>Роль</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Данные пользователей появятся здесь -->
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 MySite. Все права защищены.
+  </footer>
+
+  <script src="js/fetch-users.js"></script>
+  <script src="js/logout.js"></script>
 
 </body>
+
 </html>
