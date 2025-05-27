@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Мой Лендинг</title>
+  <link rel="stylesheet" href="../css/applications.css">
+  <link rel="stylesheet" href="../css/style.css">
+
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">🌟 Мой не сам</div>
+      <nav>
+        <a href="#">Заявки</a>
+        <a href="create-application.html">Создать заявку</a>
+        <div class="auth-buttons">
+          <button onclick="location.href='pages/login.html'">Войти</button>
+          <button onclick="location.href='pages/register.html'">Зарегистрироваться</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="content">
+        <h1>История заявок</h1>
+
+        <table id="requests-table">
+            <thead>
+                <tr>
+                    <th>Дата</th>
+                    <th>Время</th>
+                    <th>Услуга</th>
+                    <th>Описание</th>
+                    <th>Адрес</th>
+                    <th>Телефон</th>
+                    <th>Оплата</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Записи будут добавлены через JS -->
+            </tbody>
+        </table>
+
+        <div id="result"></div>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 MySite. Все права защищены.
+  </footer>
+
+  <script src="../js/check-logged-in-pages.js"></script>
+  <script src="../js/applications.js"></script>
+</body>
+</html>

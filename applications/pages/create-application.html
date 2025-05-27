@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Мой Лендинг</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/create-application.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">🌟 Мой не сам</div>
+            <nav>
+                <a href="applications.html">Заявки</a>
+                <a href="#">Создать заявку</a>
+                <div class="auth-buttons">
+                    <button onclick="location.href='login.html'">Войти</button>
+                    <button onclick="location.href='register.html'">Зарегистрироваться</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1>Формирование заявки</h1>
+
+            <form id="service-request-form">
+                <label for="address">Адрес:</label>
+                <input type="text" id="address" name="address" required placeholder="Укажите адрес">
+
+                <label for="phone">Телефон:</label>
+                <input type="tel" id="phone" name="phone" required placeholder="+7(XXX)-XXX-XX-XX">
+
+                <label for="date">Желаемая дата:</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="time">Желаемое время:</label>
+                <input type="time" id="time" name="time" required>
+
+                <label for="service">Выберите услугу:</label>
+                <select id="service" name="service" required>
+                    <option value="" disabled selected>-- Выберите --</option>
+                    <option value="Общий клининг">Общий клининг</option>
+                    <option value="Генеральная уборка">Генеральная уборка</option>
+                    <option value="Послестроительная уборка">Послестроительная уборка</option>
+                    <option value="Химчистка ковров и мебели">Химчистка ковров и мебели</option>
+                </select>
+
+                <div>
+                    <input type="checkbox" id="other-service-check" name="other_service_check">
+                    <label for="other-service-check">Иная услуга</label>
+                </div>
+
+                <div id="other-service-container" class="hidden">
+                    <label for="other-service-text">Опишите необходимую услугу:</label>
+                    <textarea id="other-service-text" name="other_service_text" placeholder="Опишите услугу"></textarea>
+                </div>
+
+                <label>Предпочтительный тип оплаты:</label>
+                <div>
+                    <input type="radio" id="payment-cash" name="payment" value="cash" required>
+                    <label for="payment-cash">Наличные</label>
+                </div>
+                <div>
+                    <input type="radio" id="payment-card" name="payment" value="card" required>
+                    <label for="payment-card">Банковская карта</label>
+                </div>
+
+                <button type="submit">Отправить заявку</button>
+            </form>
+
+            <div id="result"></div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2025 MySite. Все права защищены.
+    </footer>
+
+    <script src="../js/check-logged-in-pages.js"></script>
+    <script src="../js/create-application.js"></script>
+</body>
+
+</html>
