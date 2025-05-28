@@ -11,6 +11,7 @@ async function loadRequests() {
             const tbody = document.querySelector('#requests-table tbody');
             tbody.innerHTML = '';
 
+
             if (result.length === 0) {
                 document.getElementById('result').textContent = 'У вас пока нет заявок.';
                 return;
@@ -26,6 +27,8 @@ async function loadRequests() {
                             <td>${req.address}</td>
                             <td>${req.phone}</td>
                             <td>${req.payment_method === 'cash' ? 'Наличные' : 'Банковская карта'}</td>
+                            <td>${req.status}</td>
+                            <td>${req.cancel_reason}</td>
                         `;
                 tbody.appendChild(tr);
             });

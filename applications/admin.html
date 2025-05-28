@@ -4,17 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Мой Лендинг</title>
+  <link rel="stylesheet" href="css/applications.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header>
     <div class="container">
-      <div class="logo">🌟 Мой не сам (ADMIN)</div>
+      <a href="#" class="logo">🌟 Мой не сам (ADMIN)</a>
       <nav>
-        <!-- <a href="#">Главная</a>
-        <a href="pages/catalog.html">Каталог</a>
-        <a href="pages/cart.html">Корзина</a>
-        <a href="pages/contacts.html">Контакты</a> -->
+        <a href="#">Заявки</a>
         <div class="auth-buttons">
           <button onclick="location.href='pages/login.html'">Войти</button>
           <button onclick="location.href='pages/register.html'">Зарегистрироваться</button>
@@ -25,7 +23,30 @@
 
   <main>
     <div class="content">
-      <h1>Добро пожаловать!</h1>
+        <h1>Все заявки</h1>
+
+        <table id="requests-table">
+            <thead>
+                <tr>
+                    <th>ФИО</th>
+                    <th>Дата</th>
+                    <th>Время</th>
+                    <th>Услуга</th>
+                    <th>Описание</th>
+                    <th>Адрес</th>
+                    <th>Телефон</th>
+                    <th>Оплата</th>
+                    <th>Статус</th>
+                    <th>Причина отказа</th>
+                    <th>Сохранить</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Записи будут добавлены через JS -->
+            </tbody>
+        </table>
+
+        <div id="result"></div>
     </div>
   </main>
 
@@ -33,6 +54,8 @@
     &copy; 2025 MySite. Все права защищены.
   </footer>
 
+  <script src="js/check-access.js"></script>
   <script src="js/check-logged-in.js"></script>
+  <script src="js/applications-admin.js"></script>
 </body>
 </html>

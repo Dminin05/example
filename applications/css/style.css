@@ -28,8 +28,14 @@ header .container {
 }
 
 .logo {
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: bold;
+  color: #dfe4ef; /* тёмный текст */
+  text-decoration: none;
+}
+
+.logo:hover {
+  opacity: 0.85;
 }
 
 nav {

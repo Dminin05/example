@@ -29,9 +29,9 @@ if (!preg_match('/^\\+7\\(\\d{3}\\)-\\d{3}-\\d{2}-\\d{2}$/', $input['phone'])) {
 
 try {
     $stmt = $pdo->prepare("INSERT INTO applications (
-        user_id, address, phone, service_date, service_time, service_type, other_service_text, payment_method, created_at
+        user_id, address, phone, service_date, service_time, service_type, other_service_text, payment_method, created_at, status
     ) VALUES (
-        :user_id, :address, :phone, :service_date, :service_time, :service_type, :other_service_text, :payment_method, NOW()
+        :user_id, :address, :phone, :service_date, :service_time, :service_type, :other_service_text, :payment_method, NOW(), 'Создана'
     )");
 
     $stmt->execute([

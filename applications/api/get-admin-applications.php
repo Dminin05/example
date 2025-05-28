@@ -11,27 +11,25 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 try {
-    $userId = $_SESSION['user_id'];
-
     // Получение заявок пользователя
-    $stmt = $pdo->prepare("
+    $stmt = $pdo->query("
         SELECT 
-            service_date, 
-            service_time, 
-            service_type, 
-            other_service_text, 
-            address, 
-            phone, 
-            payment_method,
-            created_at,
-            status,
-            cancel_reason
-        FROM applications
-        WHERE user_id = :user_id
+            u.fio,
+            a.id,
+            a.service_date, 
+            a.service_time, 
+            a.service_type, 
+            a.other_service_text, 
+            a.address, 
+            a.phone, 
+            a.payment_method,
+            a.created_at,
+            a.status,
+            a.cancel_reason 
+        FROM applications a
+        JOIN users u on u.id = a.user_id
         ORDER BY created_at DESC
     ");
-    $stmt->execute(['user_id' => $userId]);
-
     $requests = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     echo json_encode($requests);
