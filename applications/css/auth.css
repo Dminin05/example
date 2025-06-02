@@ -90,3 +90,22 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+/* --- Media query for narrow screens like 390px --- */
+@media (max-width: 420px) {
+    .form-block {
+        padding: 20px 30px;
+        box-shadow: none;
+        border-radius: 0;
+        max-width: 300px;
+    }
+
+    input,
+    button {
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+}

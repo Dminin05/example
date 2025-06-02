@@ -92,3 +92,30 @@ tr[data-status='выполнено'] {
 tr[data-status='отменено'] {
   background-color: #fef2f2;
 }
+
+
+@media (max-width: 768px) {
+
+  /* Сделаем таблицу прокручиваемой */
+  #requests-table {
+    display: block;
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  #requests-table thead {
+    display: table;
+    width: 100%;
+  }
+
+  #requests-table tbody {
+    display: table;
+    width: 100%;
+  }
+
+  footer {
+    text-align: center;
+    font-size: 14px;
+    padding: 10px;
+  }
+}
