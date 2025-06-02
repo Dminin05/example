@@ -9,6 +9,7 @@
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  table-layout: fixed;
 }
 
 #requests-table thead {
@@ -16,7 +17,7 @@
 }
 
 #requests-table th {
-  padding: 14px 16px;
+  padding: 12px 16px;
   font-weight: 600;
   text-align: left;
   color: #374151;
@@ -30,7 +31,10 @@
   border-bottom: 1px solid #f3f4f6;
   vertical-align: top;
   white-space: normal;
-  word-break: break-word;
+}
+ 
+th, td {
+  width: 80px;
 }
 
 #requests-table tr:last-child td {
@@ -100,7 +104,12 @@ tr[data-status='отменено'] {
   #requests-table {
     display: block;
     overflow-x: auto;
-    width: 100%;
+    width: 340px;
+  }
+
+  .content {
+    padding: 15px;
+    width: 370px;
   }
 
   #requests-table thead {
