@@ -20,15 +20,15 @@ async function loadRequests() {
             result.forEach(req => {
                 const tr = document.createElement('tr');
                 tr.innerHTML = `
-                            <td>${req.service_date}</td>
-                            <td>${req.service_time}</td>
-                            <td>${req.service_type === 'other' ? 'Иная услуга' : req.service_type}</td>
-                            <td>${req.other_service_text || ''}</td>
-                            <td>${req.address}</td>
-                            <td>${req.phone}</td>
-                            <td>${req.payment_method === 'cash' ? 'Наличные' : 'Банковская карта'}</td>
-                            <td>${req.status}</td>
-                            <td>${req.cancel_reason}</td>
+                            <td style="width: 50px">${req.service_date}</td>
+                            <td style="width: 50px">${req.service_time}</td>
+                            <td style="width: 70px">${req.service_type === 'other' ? 'Иная услуга' : req.service_type}</td>
+                            <td style="width: 100px">${req.other_service_text || ''}</td>
+                            <td style="width: 70px">${req.address}</td>
+                            <td style="width: 50px">${req.phone}</td>
+                            <td style="width: 30px">${req.payment_method === 'cash' ? 'Наличные' : 'Банковская карта'}</td>
+                            <td style="width: 40px">${req.status}</td>
+                            <td style="width: 70px">${req.cancel_reason}</td>
                         `;
                 tbody.appendChild(tr);
             });

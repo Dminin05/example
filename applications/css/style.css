@@ -34,7 +34,7 @@ header .container {
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #dfe4ef; /* тёмный текст */
+  color: #ffffff; /* тёмный текст */
   text-decoration: none;
 }
 
@@ -175,6 +175,11 @@ footer {
 .service-card p {
   font-size: 1rem;
   color: #374151;
+}
+
+.link {
+  text-decoration: none;
+  color: #1d1e1e; 
 }
 
 
